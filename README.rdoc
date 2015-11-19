@@ -1,0 +1,35 @@
+= Paul and Katie's Wedding Website
+
+I decided to make our wedding website on my own using Ruby On Rails. Rails is used as the web framework for PatientsLikeMe which is where I currently work. If you decide you like what I have done here and you would like to use it for your own wedding please feel free to clone my repository. If you think I could have done something better/differently please make a pull request!
+
+== Setup/Install
+
+In case you forget how this works:
+
+Clone the git repository.
+
+  git clone git://github.com/rumdawgg/wedding.git
+  cd wedding
+
+Get all of the required gems.
+
+  bundle install
+
+Move the sample database config file.
+
+  mv config/database.yml.sample config/database.yml  
+
+Edit it for your environment and migrate the database.
+
+  rake db:create
+  rake db:migrate RAILS_ENV=production
+
+== Features
+
+_coming soon_
+
+== Found a bug?
+
+If you are having a problem with my site please submit an issue here:
+
+http://github.com/rumdawgg/wedding/issues
