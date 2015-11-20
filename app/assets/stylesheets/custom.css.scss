@@ -1,0 +1,68 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Hanalei);
+
+/* universal */
+
+body {
+  padding-top: 1px;
+    background-color: #da92fc;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+  .navbar {
+  margin-top: 50px;
+margin-left: 50px;
+margin-right: 50px;
+
+  }
+
+  .navbar-nav {
+    width: 100%;
+      font-size: 2em;
+    text-align: center;
+    > li {
+      float: none;
+      display: inline-block;
+    }
+  }
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+  /*font-family: 'Dancing Script', sans-serif;*/
+    font-family: 'Hanalei', sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
