@@ -1,24 +1,35 @@
+/* imported items */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Hanalei);
 @import url(https://fonts.googleapis.com/css?family=Spinnaker);
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
+@import url(https://fonts.googleapis.com/css?family=Lateef);
+
+/* variables */
+
+$gray-medium-light: #eaeaea;
+
 /* universal */
 
 body {
-  padding-top: 1px;
-    background-color: #da92fc;
+    padding-top: 1px;
+    background-color: #C8A2C8;
 }
 
 section {
-  overflow: auto;
+    overflow: auto;
 }
 
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
 .center {
-  text-align: center;
+    text-align: center;
 }
 
 .navbar {
@@ -34,8 +45,8 @@ textarea {
     font-family: 'Spinnaker', sans-serif;
     text-align: center;
     > li {
-      float: none;
-      display: inline-block;
+        float: none;
+        display: inline-block;
     }
   }
 
@@ -44,26 +55,55 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1;
-  /*font-family: 'Dancing Script', sans-serif;*/
-    font-family: 'Hanalei', sans-serif;
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 5px;
-  text-align: center;
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Great Vibes', sans-serif;
 }
 
 h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: normal;
+    font-family: 'Oswald', sans-serif;
 }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+
+
+jumbotron {
+    p {
+        font-size: 8em;
+        line-height: 1.7em;
+        font-family: 'Lateef', sans-serif;
+    }
+    img {
+        
+    }
+
+
+}
+/* footer */
+
+footer {
+  margin-top: 10px;
+  margin-bottom: 45px;
+  padding-top: 5px;
+  border-top: 2px solid $gray;
+  left {
+      color: $gray-darker;
+      float: left;
+      font-family: 'Spinnaker', sans-serif;
+  }
+  center {
+      color: $gray-darker;
+      text-align: center;
+      font-family: 'Spinnaker', sans-serif;;
+  }
+  right {
+      color: $gray-darker;
+      font-family: 'Spinnaker', sans-serif;
+      float: right;
+  }
 }
