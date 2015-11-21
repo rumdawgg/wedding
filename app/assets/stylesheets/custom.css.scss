@@ -8,6 +8,10 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
 @import url(https://fonts.googleapis.com/css?family=Lateef);
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Aclonica);
+@import url(https://fonts.googleapis.com/css?family=Suranna);
+
 
 /* variables */
 
@@ -58,19 +62,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 5em;
     text-align: center;
     font-family: 'Great Vibes', sans-serif;
 }
 
 h2 {
     font-size: 1.2em;
+    letter-spacing: 2px;
     text-align: center;
     font-weight: normal;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Aclonica', sans-serif;
 }
 
-
+h3 {
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Aclonica', sans-serif;
+}
 
 jumbotron {
     p {
