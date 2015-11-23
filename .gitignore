@@ -16,3 +16,14 @@ config/aws.yml
 /log/*
 !/log/.keep
 /tmp
+*.swp
+*.swo
+.rvmrc
+.rbenv-version
+.DS_Store
+.rbenv-vars
+*.sublime-*
+*sublime-*f
+
+/public/assets/
+/public/source_maps/
