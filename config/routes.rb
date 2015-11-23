@@ -3,4 +3,5 @@ Rails.application.routes.draw do
    get    'story'    => 'static#story'
    get    'event'    => 'static#event'
    get    'registries'    => 'static#registries'
+   get    'photos'     => 'static#photos'
 end
