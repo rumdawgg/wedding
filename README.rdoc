@@ -2,6 +2,10 @@
 
 I decided to make our wedding website on my own using Ruby On Rails. Rails is used as the web framework for PatientsLikeMe which is where I currently work. If you decide you like what I have done here and you would like to use it for your own wedding please feel free to clone my repository. If you think I could have done something better/differently please make a pull request!
 
+{<img src="https://codeclimate.com/github/rumdawgg/wedding/badges/gpa.svg" />}[https://codeclimate.com/github/rumdawgg/wedding]
+
+{<img src="https://codeclimate.com/github/rumdawgg/wedding/badges/issue_count.svg" />}[https://codeclimate.com/github/rumdawgg/wedding]
+
 == Setup/Install
 
 In case you forget how this works:
