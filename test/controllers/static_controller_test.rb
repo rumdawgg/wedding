@@ -4,6 +4,43 @@ class StaticControllerTest < ActionController::TestCase
   test "should get home" do
     get :home
     assert_response :success
+    assert_select "title", "Paul & Katie's Wedding :: Welcome"
+  end
+
+  test "should get story" do
+    get :story
+    assert_response :success
+    assert_select "title", "Paul & Katie's Wedding :: Story"
+  end
+ 
+  test "should get photos" do
+    get :photos
+    assert_response :success
+    assert_select "title", "Paul & Katie's Wedding :: Photos"
+  end
+  
+  test "should get cats" do
+    get :cats
+    assert_response :success
+    assert_select "title", "Paul & Katie's Wedding :: Cats"
+  end
+ 
+  test "should get event" do
+    get :event
+    assert_response :success
+    assert_select "title", "Paul & Katie's Wedding :: Event"
+  end
+
+  test "should get registries" do
+    get :registries
+    assert_response :success
+    assert_select "title", "Paul & Katie's Wedding :: Registries"
+  end
+
+  test "should get rsvp" do
+    get :rsvp
+    assert_response :success
+    assert_select "title", "Paul & Katie's Wedding :: RSVP"
   end
 
 end
