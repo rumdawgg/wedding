@@ -1,8 +1,9 @@
 set :rails_env, 'production'
 set :stage, 'production'
-    server 'rails.lan.chicarello.com', roles: %w{app db web}
+    server 'test-wedding.chicarello.com', roles: %w{app db web}
 
 namespace :deploy do
-    puts "Please run 'git push heroku master' for the production deploy task"
-    exit
+  task :restart do
+    invoke 'deploy:rolling_restart'
+  end
 end
