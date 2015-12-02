@@ -13,6 +13,7 @@ gem 'capistrano-rails',     '~> 1.1'
 gem 'capistrano-bundler',   '~> 1.1'
 gem 'rollbar',              '~> 2.5.0'
 gem 'jbuilder',             '~> 2.0'
+gem 'newrelic_rpm',
 gem 'sdoc',                 '~> 0.4.0', group: :doc
 gem "codeclimate-test-reporter", group: :test, require: nil
 
