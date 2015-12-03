@@ -4,6 +4,6 @@ set :stage, 'stage'
 
 namespace :deploy do
   task :restart do
-    invoke 'deploy:rolling_restart'
+    invoke 'deploy:simultaneous_restart'
   end
 end
