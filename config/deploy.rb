@@ -116,7 +116,7 @@ namespace :deploy do
   
   task :upload_images do
     on roles(:web) do
-      upload! "app/assets/images/", "#{current_path}/app/assets/", recursive: true
+      upload! "app/assets/images/", "#{release_path}/app/assets/", recursive: true
     end
   end
 
