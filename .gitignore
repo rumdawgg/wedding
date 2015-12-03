@@ -25,5 +25,8 @@ config/aws.yml
 *.sublime-*
 *sublime-*f
 
+# don't commit images to the repository
+*.jpg
+
 /public/assets/
 /public/source_maps/
