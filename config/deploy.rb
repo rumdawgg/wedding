@@ -95,13 +95,12 @@ end
 
 # Deploy tasks
 namespace :deploy do
-    desc "Restart application using a rolling restart"
-    task :rolling_restart do
-        on roles(:app), in: :sequence, wait: 10 do |host|
-            info "[deploy:rolling_restart] Restarting passenger on #{host}"
-            execute :touch, "#{fetch(:deploy_to)}/local_shared/passenger_restart/restart.txt"
-        end
+  desc "Restart application simultaneously on all servers"
+  task :simultaneous_restart do
+    on roles(:app) do
+      execute :touch, "#{fetch(:deploy_to)}/local_shared/passenger_restart/restart.txt"
     end
+  end
 
   desc "Check if downtime is required and bring site down"
   task :downtime do
@@ -115,6 +114,12 @@ namespace :deploy do
     end
   end
   
+  task :upload_images do
+    on roles(:web) do
+      upload! "app/assets/images/", "#{current_path}/app/assets/", recursive: true
+    end
+  end
+
   desc "Create an empty database on the db server"
   task :createdb do
     on roles(:db) do
@@ -125,7 +130,7 @@ namespace :deploy do
   end
 
   before :deploy, 'environment_check:all'
-  before :deploy, 'deploy:createdb'
+  before :updated, 'deploy:upload_images'
   after :publishing, :restart
   after :restart, 'maint:down'
 

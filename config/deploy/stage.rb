@@ -1,6 +1,6 @@
 set :rails_env, 'stage'
 set :stage, 'stage'
-    server '192.168.33.33', roles: %w{app db web}
+    server 'aria.lan.chicarello.com', roles: %w{app db web}
 
 namespace :deploy do
   task :restart do
