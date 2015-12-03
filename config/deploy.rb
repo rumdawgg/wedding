@@ -3,16 +3,14 @@ lock '3.4.0'
 
 set :application, 'wedding'
 set :repo_url, 'git@github.com:rumdawgg/wedding.git'
-
-
 set :scm, :git
-# Run with cap production deploy branchname=ops
+
+# Run with cap production deploy branchname=master
 if "#{ENV['branchname']}".empty?
   set :branch, "master"
 else
   set :branch, "#{ENV['branchname']}"
 end
-set :currentbranch, "current"
 
 # Deploy Settings
 set :deploy_user, 'www'
@@ -127,7 +125,7 @@ namespace :deploy do
   end
 
   before :deploy, 'environment_check:all'
-  #before :deploy, 'deploy:createdb'
+  before :deploy, 'deploy:createdb'
   after :publishing, :restart
   after :restart, 'maint:down'
 
