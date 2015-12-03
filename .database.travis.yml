@@ -3,5 +3,3 @@ test: &test
   database: wedding_test
   host: localhost
   username: postgres
-  password: 
-  min_messages: warning

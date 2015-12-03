@@ -5,4 +5,5 @@ addons:
     code_climate:
         repo_token: 926525220689d4c21bcc0784a7b5f858a585100cbb9dd5a7d45236f9db391abe
 before_script:
-    - cp config/database.travis.yml config/database.yml
+    - cp .database.travis.yml config/database.yml
+    - psql -c 'create database wedding_test;' -U postgres
