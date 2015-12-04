@@ -54,6 +54,10 @@ GEM
     capistrano-rails (1.1.5)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     codeclimate-test-reporter (0.4.8)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
@@ -104,6 +108,7 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.6.2)
+    mimemagic (0.3.0)
     mini_backtrace (0.1.3)
       minitest (> 1.2.0)
       rails (>= 2.3.3)
@@ -125,6 +130,12 @@ GEM
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    paperclip (4.3.2)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
     pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -227,6 +238,7 @@ DEPENDENCIES
   mini_backtrace (= 0.1.3)
   minitest-reporters (= 1.0.5)
   newrelic_rpm
+  paperclip
   pg
   rails (= 4.2.2)
   rollbar (~> 2.5.0)
