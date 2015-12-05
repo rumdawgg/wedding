@@ -1,12 +1,12 @@
 <% provide(:title, "Photos") %>
 <div class="center jumbotron">
-
-<div id="links">
-    <div class="row">
-  <% @photos.each do |photo| %>
-     <div class="col-md-4">
-        <%= link_to( image_tag(photo.file.url()), image_path(photo.file.url()), :data => {:gallery => 'gallery'}, :class => 'thumbnail', :style => {:width => '50px', :height => '50px'} ) %>
+    <div id="links">
+        <div class="row">
+            <% @photos.each do |photo| %>
+            <div class="col-md-4">
+                <%= link_to( image_tag(photo.file.url()), image_path(photo.file.url()), :data => {:gallery => 'gallery'}, :class => 'thumbnail', :style => {:width => '50px', :height => '50px'} ) %>
+            </div>
+            <% end -%>
+        </div>
     </div>
-  <% end -%>
-</div>
 </div>
