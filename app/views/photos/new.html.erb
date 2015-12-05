@@ -1,15 +1,17 @@
-<%- form_for @photo, html: { :multipart => true } do |f| %>
-  <p>
-    <%= f.label :title %> <br>
-    <%= f.text_field :title %>
-  </p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@photo) do |f| %>
 
-  <p>
-    <%= f.label :file %> <br>
-    <%= f.file_field :file %>
-  </p>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
 
-  <p>
-    <%= f.submit 'Upload Photo' %>
-  </p>
-<%- end %>
+      <%= f.label :caption %>
+      <%= f.text_field :caption, class: 'form-control' %>
+
+      <%= f.label :file %>
+      <%= f.file_field :file, class: 'form-control' %>
+
+      <%= f.submit "Upload Photo", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

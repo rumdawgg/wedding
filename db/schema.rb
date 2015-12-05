@@ -16,11 +16,6 @@ ActiveRecord::Schema.define(version: 20151204203900) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "images", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "photos", force: :cascade do |t|
     t.string   "title"
     t.string   "caption"
@@ -30,13 +25,6 @@ ActiveRecord::Schema.define(version: 20151204203900) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
-  end
-
-  create_table "rsvps", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
