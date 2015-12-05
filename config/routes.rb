@@ -5,6 +5,6 @@ Rails.application.routes.draw do
    get    'event'       => 'static#event'
    get    'registries'  => 'static#registries'
    get    'rsvp'        => 'static#rsvp'
-      get    'photos'      => 'photos#new'
-      resources :photos
+   get    'photos'      => 'photos#view'
+   resources :photos
 end
