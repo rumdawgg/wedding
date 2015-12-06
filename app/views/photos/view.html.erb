@@ -4,7 +4,7 @@
         <div class="row">
             <% @photos.each do |photo| %>
             <div class="col-md-4">
-                <%= link_to( image_tag(photo.file.url()), image_path(photo.file.url()), :data => {:gallery => 'gallery'}, :class => 'thumbnail', :style => {:width => '50px', :height => '50px'} ) %>
+                <%= link_to( image_tag(photo.file.url('thumb')), image_path(photo.file.url()), :data => {:gallery => 'gallery'} ) %>
             </div>
             <% end -%>
         </div>
