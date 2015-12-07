@@ -1,0 +1,6 @@
+<% provide(:title, "All Users") %>
+<div class="jumbotron">
+            <% @users.each do |user| %>
+                <%= user.email %>
+            <% end -%>
+</div>

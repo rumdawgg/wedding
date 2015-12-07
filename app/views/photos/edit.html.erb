@@ -1,20 +1,13 @@
 <div class="center jumbotron">
-    <%= image_tag @photo.file.url() %>
-<div class="center jumbotron">
-<%= form_for @photo do |f| %>
-  <%= render 'shared/errors', object: @photo %>
-
-  <div class="form-group">
-    <%= f.label :caption %>
-    <%= f.text_field :caption, class: 'form-control' %>
-  </div>
-
-   <div class="form-group">
-    <%= f.check_box :delete_asset, class: 'form-control' %>
-  </div>
-
-
-  <%= f.submit 'Update', class: 'btn btn-primary' %>
-<% end %>
-</div>
+  <%= image_tag @photo.file.url() %>
+  <%= form_for @photo do |f| %>
+    <%= render 'shared/errors', object: @photo %>
+    <div class="form-group">
+      <%= f.label :caption %>
+      <%= f.text_field :caption, class: 'form-control' %>
+    </div>
+    <%= f.submit 'Update Photo', class: 'btn btn-primary' %>
+  <% end %>
+  <br><br>
+  <%= button_to "Delete Photo", @photo, method: :delete, data: { confirm: "Are you sure you want to delete this photo?" }, class: 'btn btn-danger' %>
 </div>

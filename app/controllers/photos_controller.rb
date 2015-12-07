@@ -1,11 +1,23 @@
 class PhotosController < ApplicationController
   
+    before_filter :authenticate_user!, except: [:view]
+
   def new
     @photo = Photo.new
   end
 
   def view
     @photos = Photo.all
+  end
+
+  def index
+    @photos = Photo.all
+  end
+
+  def destroy
+      Photo.find(params[:id]).destroy
+      flash[:success] = "Photo deleted"
+      redirect_to admin_photos_path
   end
 
   def create
@@ -18,19 +30,14 @@ class PhotosController < ApplicationController
     end
   end
 
-  def show
-    @photo = Photo.find params[:id]
-  end
-
   def edit
     @photo = Photo.find params[:id]
   end
 
   def update
   @photo = Photo.find params[:id]
-
   if @photo.update_attributes(photo_params)
-    redirect_to photos_path
+    redirect_to admin_photos_path
   else
     render :edit
     end

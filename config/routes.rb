@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root    'static#home'
    get    'story'       => 'static#story'
@@ -11,5 +12,7 @@ Rails.application.routes.draw do
    get    'registries'  => 'static#registries'
    get    'rsvp'        => 'static#rsvp'
    get    'photos'      => 'photos#view'
+   get    'admin/users' => 'users#index'
+   get    'admin/photos' => 'photos#index'
    resources :photos
 end
