@@ -16,6 +16,7 @@ gem 'jbuilder',             '~> 2.0'
 gem 'newrelic_rpm'
 gem 'sdoc',                 '~> 0.4.0', group: :doc
 gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
