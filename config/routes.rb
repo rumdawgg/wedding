@@ -4,6 +4,9 @@ Rails.application.routes.draw do
    get    'photos'      => 'static#photos'
    get    'cats'        => 'static#cats'
    get    'event'       => 'static#event'
+   get    'lodging'     => 'static#lodging'
+   get    'parking'     => 'static#parking'
+   get    'transportation'     => 'static#transportation'
    get    'registries'  => 'static#registries'
    get    'rsvp'        => 'static#rsvp'
 end
