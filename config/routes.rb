@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root    'static#home'
    get    'story'       => 'static#story'
-   get    'photos'      => 'static#photos'
    get    'cats'        => 'static#cats'
    get    'event'       => 'static#event'
    get    'lodging'     => 'static#lodging'
@@ -11,4 +10,6 @@ Rails.application.routes.draw do
    get    'activities'  => 'static#activities'
    get    'registries'  => 'static#registries'
    get    'rsvp'        => 'static#rsvp'
+   get    'photos'      => 'photos#view'
+   resources :photos
 end

@@ -1,0 +1,12 @@
+<% provide(:title, "Photos") %>
+<div class="center jumbotron">
+    <div id="links">
+        <div class="row">
+            <% @photos.each do |photo| %>
+            <div class="col-md-4">
+                <%= link_to( image_tag(photo.file.url('thumb')), image_path(photo.file.url()), :data => {:gallery => 'gallery'} ) %>
+            </div>
+            <% end -%>
+        </div>
+    </div>
+</div>

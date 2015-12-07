@@ -12,15 +12,15 @@
 @import url(https://fonts.googleapis.com/css?family=Aclonica);
 @import url(https://fonts.googleapis.com/css?family=Suranna);
 
+/* variables */
+
+$gray-medium-light: #eaeaea;
+
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
-
-/* variables */
-
-$gray-medium-light: #eaeaea;
 
 /* universal */
 
@@ -122,6 +122,8 @@ footer {
       float: right;
   }
 }
+
+/* forms */
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
