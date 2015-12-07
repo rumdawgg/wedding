@@ -130,7 +130,7 @@ namespace :deploy do
   end
 
   before :deploy, 'environment_check:all'
-  before :updated, 'deploy:upload_images'
+  #before :updated, 'deploy:upload_images'
   after :publishing, :restart
   after :restart, 'maint:down'
 
