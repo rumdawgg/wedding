@@ -7,6 +7,7 @@ Rails.application.routes.draw do
    get    'lodging'     => 'static#lodging'
    get    'parking'     => 'static#parking'
    get    'transportation'     => 'static#transportation'
+   get    'activities'  => 'static#activities'
    get    'registries'  => 'static#registries'
    get    'rsvp'        => 'static#rsvp'
 end
