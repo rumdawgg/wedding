@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class StaticControllerTest < ActionController::TestCase
+
+  include Devise::TestHelpers
   test "should get home" do
     get :home
     assert_response :success
@@ -11,12 +13,6 @@ class StaticControllerTest < ActionController::TestCase
     get :story
     assert_response :success
     assert_select "title", "Paul & Katie's Wedding :: Story"
-  end
- 
-  test "should get photos" do
-    get :photos
-    assert_response :success
-    assert_select "title", "Paul & Katie's Wedding :: Photos"
   end
   
   test "should get cats" do
