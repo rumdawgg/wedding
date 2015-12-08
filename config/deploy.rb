@@ -23,6 +23,9 @@ set :ssh_options, {
   user: "#{fetch(:deploy_user)}",
   forward_agent: true
 }
+set :rollbar_token, '78a045fd595846199397295062ffa7a1'
+set :rollbar_env, Proc.new { fetch :stage }
+set :rollbar_role, Proc.new { :app }
 
 # Run db:migrate only if migrations exist
 set :conditionally_migrate, true
@@ -93,6 +96,24 @@ namespace :maint do
   end
 end
 
+namespace :newrelic do
+  desc "Track release/deployment of code"
+  task :track_release
+      on roles(:db) do
+        unless dry_run
+          rails_env = fetch(:rails_env, "production")
+        if %w(production demo).include?(ENV['environment'])
+          release_desc = "branch #{ variables[:branch]||'master' }"
+          revision = variables[:real_revision]
+          revision = revision.call if revision.respond_to?(:call)
+          unless dry_run
+            run_locally "RAILS_ENV=#{rails_env} newrelic deployments '#{release_desc}' -r #{revision}"
+          end
+        end
+      end
+    end
+end
+
 # Deploy tasks
 namespace :deploy do
   desc "Restart application simultaneously on all servers"
@@ -132,6 +153,6 @@ namespace :deploy do
   before :deploy, 'environment_check:all'
   #before :updated, 'deploy:upload_images'
   after :publishing, :restart
-  after :restart, 'maint:down'
+  after :restart, 'maint:down', 'newrelic:track_release'
 
 end
