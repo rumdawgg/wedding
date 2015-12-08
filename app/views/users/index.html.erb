@@ -2,5 +2,7 @@
 <div class="jumbotron">
             <% @users.each do |user| %>
                 <%= user.email %>
+                 <%= user.approved  %>
+                <%=  link_to("Edit", edit_user_path(user)) %>
             <% end -%>
 </div>

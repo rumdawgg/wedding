@@ -15,4 +15,5 @@ Rails.application.routes.draw do
    get    'admin/users' => 'users#index'
    get    'admin/photos' => 'photos#index'
    resources :photos
+     resources :users
 end
