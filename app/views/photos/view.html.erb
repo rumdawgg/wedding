@@ -4,9 +4,18 @@
         <div class="row">
             <% @photos.each do |photo| %>
             <div class="col-md-4">
-                <%= link_to( image_tag(photo.file.url('thumb')), image_path(photo.file.url()), :data => {:gallery => 'gallery'} ) %>
+                <%= link_to( image_tag(photo.file.url('thumb')), image_path(photo.file.url()), :data => {:gallery => 'gallery'}, :title => photo.caption ) %>
             </div>
             <% end -%>
         </div>
     </div>
 </div>
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
