@@ -3,9 +3,9 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
     include Devise::TestHelpers
 
-      def setup
-        @user = users(:paul)
-        @other_user = users(:katie)
-      end
+  test "should redirect index when not logged in" do
+    get :index
+    assert_redirected_to "/users/sign_in"
+  end
 
 end
