@@ -1,4 +1,21 @@
 <% provide(:title, "Photos") %>
 <div class="center jumbotron">
-<p>Photos will go here.</p>
+<div id="links">
+	<div class="row">
+  <% (1..13).each do |i| -%>
+ 	<div class="col-md-4">
+    	<%= link_to( image_tag("engagement#{i}.jpg"), image_path("engagement#{i}.jpg"), :data => {:gallery => 'gallery'}, :class => 'thumbnail', :style => {:width => '50px', :height => '50px'} ) %>
+    </div>
+  <% end -%>
+</div>
+</div>
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
 </div>
