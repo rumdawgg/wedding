@@ -21,6 +21,8 @@
             <ul class="dropdown-menu">
               <li><%= link_to "Edit Photos", admin_photos_path %></li>
               <li><%= link_to "Upload Photos", "/photos/new" %></li>
+              <li><%= link_to "Edit Albums", admin_albums_path %></li>
+              <li><%= link_to "Create Albums", "/albums/new" %></li>
               <li><%= link_to "Edit Users", admin_users_path %></li>
               <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
             </ul>

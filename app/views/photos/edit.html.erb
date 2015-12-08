@@ -1,11 +1,14 @@
 <div class="center jumbotron">
-  <%= image_tag @photo.file.url() %>
+  <%= image_tag @photo.file.url('thumb') %>
   <%= form_for @photo do |f| %>
     <%= render 'shared/errors', object: @photo %>
     <div class="form-group">
       <%= f.label :caption %>
       <%= f.text_field :caption, class: 'form-control' %>
     </div>
+      <div class="form-group">
+<%= f.collection_select(:album_id, Album.all, :id, :name, { :prompt => 'Select an Album', :selected => @photo.album_id }, { class: 'form-control' }) %>
+  </div>
     <%= f.submit 'Update Photo', class: 'btn btn-primary' %>
   <% end %>
   <br><br>
