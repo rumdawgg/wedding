@@ -5,7 +5,7 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should redirect index when not logged in" do
     get :index
-    assert_redirected_to "/users/sign_in"
+    assert_redirected_to new_user_session_path
   end
 
 end

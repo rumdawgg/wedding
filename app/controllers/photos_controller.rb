@@ -1,17 +1,13 @@
 class PhotosController < ApplicationController
   
-    before_filter :authenticate_user!, except: [:view]
+    before_filter :authenticate_user!
 
   def new
     @photo = Photo.new
   end
 
-  def view
-    @photos = Photo.where(album_id: "2")
-  end
-
-  def cats
-    @photos = Photo.where(album_id: "1")
+  def index
+     @photos = Photo.all
   end
 
   def destroy
