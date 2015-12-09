@@ -20,8 +20,10 @@ class AlbumsController < ApplicationController
 	end
     
     def show
-     @album = Album.find(params[:id])
-  	 @photos = @album.photos
+        @album = Album.find(params[:id])
+        @photos = @album.photos
+        rescue ActiveRecord::RecordNotFound
+        redirect_to root_url
     end
 
   	private
