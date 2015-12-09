@@ -14,12 +14,6 @@ class StaticControllerTest < ActionController::TestCase
     assert_response :success
     assert_select "title", "Paul & Katie's Wedding :: Story"
   end
-  
-  test "should get cats" do
-    get :cats
-    assert_response :success
-    assert_select "title", "Paul & Katie's Wedding :: Cats"
-  end
  
   test "should get event" do
     get :event
