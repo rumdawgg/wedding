@@ -34,7 +34,8 @@ set :conditionally_migrate, true
 set :custom_directories, %W{local_shared/passenger_restart}
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml config/application.yml}
+set :linked_files, %w{config/database.yml config/application.yml config/newrelic.yml}
+set :linked_dirs, fetch(:linked_dirs) + %w{public/system}
 
 # Make sure rails and rake commands are called with bundle exec
 SSHKit.config.command_map[:rake]  = "bundle exec rake"
