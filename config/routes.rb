@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
   root    'static#home'
    get    'story'       => 'static#story'
    get    'cats'        => 'photos#cats'
@@ -11,11 +11,8 @@ Rails.application.routes.draw do
    get    'activities'  => 'static#activities'
    get    'registries'  => 'static#registries'
    get    'rsvp'        => 'static#rsvp'
-   get    'photos'      => 'photos#view'
-   get    'admin/users' => 'users#index'
-   get    'admin/photos' => 'photos#index'
    get    'admin/albums' => 'albums#index'
-   resources :photos
-   resources :users
    resources :albums
+   resources :photos, path: '/admin/photos'
+   resources :users, path: '/admin/users'
 end

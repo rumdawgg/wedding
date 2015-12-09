@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-	before_filter :authenticate_user!
+	before_filter :authenticate_user!, except: [:show]
   	
   	def new
     	@album = Album.new
@@ -18,7 +18,12 @@ class AlbumsController < ApplicationController
 		  render 'new'
 		end
 	end
-  	
+    
+    def show
+     @album = Album.find(params[:id])
+  	 @photos = @album.photos
+    end
+
   	private
       	def album_params
         	params.require(:album).permit(:name, :description)
