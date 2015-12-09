@@ -7,11 +7,11 @@ class PhotosController < ApplicationController
   end
 
   def view
-    @photos = Photo.all
+    @photos = Photo.where(album_id: "2")
   end
 
-  def index
-    @photos = Photo.all
+  def cats
+    @photos = Photo.where(album_id: "1")
   end
 
   def destroy

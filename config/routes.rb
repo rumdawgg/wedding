@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root    'static#home'
    get    'story'       => 'static#story'
-   get    'cats'        => 'static#cats'
+   get    'cats'        => 'photos#cats'
    get    'event'       => 'static#event'
    get    'lodging'     => 'static#lodging'
    get    'parking'     => 'static#parking'
