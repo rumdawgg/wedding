@@ -21,7 +21,9 @@ $gray-medium-light: #eaeaea;
 
 body {
     padding-top: 1px;
-    background-color: #C8A2C8;
+    background-image: url("background.jpg");
+    background-repeat: y;
+    background-size: 100%;
 }
 
 section {
