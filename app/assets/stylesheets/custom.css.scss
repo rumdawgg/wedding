@@ -68,6 +68,7 @@ h1 {
     text-align: center;
     font-weight: bold;
     font-family: 'Alex Brush', sans-serif;
+    margin-bottom: 0px;
 }
 
 h2 {
@@ -85,25 +86,31 @@ h3 {
     font-family: 'Playfair Display', sans-serif;
 }
 
+.centerdate {
+  margin-top: 10px;
+}
+
 jumbotron {
     p {
         font-size: 8em;
         line-height: 1.7em;
         font-family: 'Lateef', sans-serif;
     }
-    img {
-        
+    img {   
     }
-
-
 }
+
 /* footer */
 
 footer {
   margin-top: 10px;
   margin-bottom: 45px;
   padding-top: 5px;
-  border-top: 2px solid $gray;
+  border-top: 2px solid black;
+  font-size: 1.2em;
+  a {
+    color: $gray;
+  }
   left {
       color: $gray-darker;
       float: left;
