@@ -1,5 +1,6 @@
 <% provide(:title, "Photos") %>
 <div class="jumbotron">
+    <%= will_paginate %>
     <div id="links">
         <div class="row">
             <% @photos.each do |photo| %>
@@ -10,4 +11,5 @@
             <% end -%>
         </div>
     </div>
+    <%= will_paginate %>
 </div>

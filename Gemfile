@@ -19,6 +19,8 @@ gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'devise'
 gem 'paperclip'
 gem 'blueimp-gallery'
+gem 'will_paginate',           '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 group :development, :test do
   gem 'byebug'
