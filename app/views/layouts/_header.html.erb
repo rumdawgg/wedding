@@ -1,7 +1,6 @@
 <header>
   <nav role="navigation" class="navbar navbar-default">
     <ul class="nav navbar-nav">
-      <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Story", story_path %></li>
       <li><%= link_to "Photos", us_path %></li>
       <li><%= link_to "Cats", cats_path %></li>
@@ -14,7 +13,7 @@
         </ul>
       </li>
       <li><%= link_to "Activities", activities_path %></li>
-      <li><%= link_to "Registries", registries_path %></li>
+      <li><%= link_to "Registry", registries_path %></li>
       <li><%= link_to "RSVP", rsvp_path %></li>
       <% if user_signed_in? %>
       <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
@@ -30,10 +29,9 @@
       <% end %>
     </ul>
   </nav>
-  <h1>Paul & Katie</h1>
-
+  <h1><%= link_to "Paul & Katie", root_path %></h1>
   <div class="center">
-  <%=  image_tag("logo.png", size: "325x135") %>
- </div>
- <h3 class="centerdate"><strong>August 13, 2016</strong></h3>
+    <%= image_tag("logo.png", size: "325x135") %>
+  </div>
+  <h3 class="centerdate">August 13, 2016</h3>
 </header>
