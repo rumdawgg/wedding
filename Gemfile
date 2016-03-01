@@ -1,31 +1,40 @@
 source 'https://rubygems.org'
 
 gem 'rails',                '4.2.5.2'
-gem 'pg'
-gem 'sass-rails',           '~> 5.0'
-gem 'uglifier',             '>= 1.3.0'
-gem 'coffee-rails',         '~> 4.1.0'
-gem 'bootstrap-sass',       '~> 3.3'
-gem 'jquery-rails'
+
+# Rails
+gem 'jbuilder'
 gem 'turbolinks'
+
+# Capistrano
 gem 'capistrano',           '~> 3.4.0'
 gem 'capistrano-rails',     '~> 1.1'
 gem 'capistrano-bundler',   '~> 1.1'
+
+# Misc
 gem 'rollbar',              '~> 2.5.0'
-gem 'jbuilder',             '~> 2.0'
 gem 'newrelic_rpm'
-gem 'sdoc',                 '~> 0.4.0', group: :doc
-gem "codeclimate-test-reporter", group: :test, require: nil
-gem 'devise'
 gem 'paperclip'
+gem 'devise'
+
+# Assets
+gem 'coffee-rails',         '~> 4.1.0'
+gem 'bootstrap-sass',       '~> 3.3'
+gem 'jquery-rails'
+gem 'sass-rails',           '~> 5.0'
+gem 'uglifier',             '>= 1.3.0'
 gem 'blueimp-gallery'
-gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
+
+# Database
+gem 'pg'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'codeclimate-test-reporter'
 end
 
 group :test do
@@ -33,3 +42,8 @@ group :test do
   gem 'mini_backtrace',     '0.1.3'
   gem 'guard-minitest',     '2.3.1'
 end
+
+group :doc do
+  gem 'sdoc',               '~> 0.4.0'
+end
+
