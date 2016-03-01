@@ -18,13 +18,13 @@ gem 'paperclip'
 gem 'devise'
 
 # Assets
-gem 'coffee-rails',         '~> 4.1.0'
-gem 'bootstrap-sass',       '~> 3.3'
+gem 'coffee-rails'
+gem 'bootstrap-sass'
 gem 'jquery-rails'
-gem 'sass-rails',           '~> 5.0'
-gem 'uglifier',             '>= 1.3.0'
+gem 'sass-rails'
+gem 'uglifier'
 gem 'blueimp-gallery'
-gem 'bootstrap-will_paginate', '0.0.10'
+gem 'bootstrap-will_paginate'
 
 # Database
 gem 'pg'
