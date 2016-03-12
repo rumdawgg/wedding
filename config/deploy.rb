@@ -87,7 +87,7 @@ namespace :maint do
       end
     end
   end
-  
+
   task :down do
     on roles(:web) do
       within release_path do
@@ -135,7 +135,7 @@ namespace :deploy do
       end
     end
   end
-  
+
   task :upload_images do
     on roles(:web) do
       upload! "app/assets/images/", "#{release_path}/app/assets/", recursive: true
@@ -153,7 +153,7 @@ namespace :deploy do
 
   before :deploy, 'environment_check:all'
   before :updated, 'deploy:upload_images'
-  after :publishing, :restart
+  after :publishing, :simultaneous_restart
   after :restart, 'maint:down', 'newrelic:track_release'
 
 end
