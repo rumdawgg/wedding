@@ -6,6 +6,7 @@
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
 @import url(https://fonts.googleapis.com/css?family=Spinnaker);
 @import url(https://fonts.googleapis.com/css?family=Alex+Brush);
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text);
 
 /* variables */
 
@@ -66,11 +67,10 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 5em;
     text-align: center;
-    font-weight: bold;
     font-family: 'Alex Brush', sans-serif;
     margin-bottom: 0px;
     a {
-      color: black;
+      color: #660066;
       text-decoration: none !important;
     }
 }
@@ -87,7 +87,7 @@ h3 {
     font-size: 2em;
     text-align: center;
     font-weight: bold;
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Crimson Text', sans-serif;
 }
 
 .centerdate {
