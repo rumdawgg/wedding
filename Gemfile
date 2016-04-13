@@ -32,7 +32,6 @@ gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'codeclimate-test-reporter'
 end
@@ -46,4 +45,3 @@ end
 group :doc do
   gem 'sdoc',               '~> 0.4.0'
 end
-
