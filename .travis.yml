@@ -8,3 +8,6 @@ before_script:
     - cp .database.travis.yml config/database.yml
     - cp config/application.yml.sample config/application.yml
     - psql -c 'create database wedding_test;' -U postgres
+env:
+  RAILS_ENV=test
+  SECRET_KEY_BASE="$(bundle exec rake secret)"
