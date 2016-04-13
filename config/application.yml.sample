@@ -1,15 +1,3 @@
-# Be sure to restart your server when you modify this file.
-
-# Your secret key is used for verifying the integrity of signed cookies.
-# If you change this key, all old signed cookies will become invalid!
-
-# Make sure the secret is at least 30 characters and all random,
-# no regular words or you'll be exposed to dictionary attacks.
-# You can use `rake secret` to generate a secure secret key.
-
-# Make sure the secrets in this file are kept private
-# if you're sharing your code publicly.
-
 development:
   secret_key_base: a06d4ec422c7c8a441ac0bca93ea85417baad96495171521e96e2bde477545c20100b2b13d5be5302f28fc2db87deebff371549a6c48bae6eb7b512fe735ad8a
 
@@ -18,8 +6,3 @@ test:
 
 stage:
   secret_key_base: a361b66a24b32cb39a50f7a7fd9cd3118afcd737741cc07050b23a0716bf4c88080ebdbec5f2ebed3d531612617fc0ea7b1ae7dcd6a66580d2208663f282fcd7
-
-# Do not keep production secrets in the repository,
-# instead read values from the environment.
-production:
-  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
