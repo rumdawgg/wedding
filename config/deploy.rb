@@ -11,6 +11,7 @@ if "#{ENV['branchname']}".empty?
 else
   set :branch, "#{ENV['branchname']}"
 end
+set :currentbranch, "current"
 
 # Deploy Settings
 set :deploy_user, 'www'
@@ -142,14 +143,14 @@ namespace :deploy do
     end
   end
 
-  desc "Create an empty database on the db server"
-  task :createdb do
-    on roles(:db) do
-        dbuser = 'postgres'
-        database = "wedding_stage"
-        execute :createdb, "-U #{dbuser} #{database} -h localhost"
-      end
-  end
+  # desc "Create an empty database on the db server"
+  # task :createdb do
+  #   on roles(:db) do
+  #       dbuser = 'postgres'
+  #       database = "wedding_stage"
+  #       execute :createdb, "-U #{dbuser} #{database} -h localhost"
+  #     end
+  # end
 
   before :deploy, 'environment_check:all'
   before :updated, 'deploy:upload_images'
