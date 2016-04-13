@@ -4,7 +4,7 @@ rvm:
   - 2.1.2
 before_script:
     - cp .database.travis.yml config/database.yml
-    - cp config/application.yml.sample config/secrets.yml
+    - cp config/secrets.yml.sample config/secrets.yml
     - psql -c 'create database wedding_test;' -U postgres
 env:
   RAILS_ENV=test
