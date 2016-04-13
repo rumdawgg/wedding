@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-ENV.update YAML.load_file('config/application.yml')[Rails.env]
+ENV.update YAML.load_file('config/secrets.yml')[Rails.env]
 
 module Wedding
   class Application < Rails::Application
