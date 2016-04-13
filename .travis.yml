@@ -1,9 +1,7 @@
 language: ruby
+cache: bundler
 rvm:
   - 2.1.2
-addons:
-    code_climate:
-        repo_token: 926525220689d4c21bcc0784a7b5f858a585100cbb9dd5a7d45236f9db391abe
 before_script:
     - cp .database.travis.yml config/database.yml
     - cp config/application.yml.sample config/application.yml
@@ -11,3 +9,7 @@ before_script:
 env:
   RAILS_ENV=test
   SECRET_KEY_BASE="$(bundle exec rake secret)"
+addons:
+    code_climate:
+        repo_token: 926525220689d4c21bcc0784a7b5f858a585100cbb9dd5a7d45236f9db391abe
+        
