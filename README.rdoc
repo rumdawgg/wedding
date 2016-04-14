@@ -22,16 +22,12 @@ Get all of the required gems.
 
 Move the sample database config file.
 
-  mv config/database.yml.sample config/database.yml  
+  mv config/database.yml.sample config/database.yml
 
 Edit it for your environment and migrate the database.
 
   rake db:create
   rake db:migrate RAILS_ENV=production
-
-== Features
-
-_coming soon_
 
 == Found a bug?
 
