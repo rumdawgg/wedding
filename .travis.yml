@@ -1,9 +1,13 @@
 language: ruby
+cache: bundler
 rvm:
   - 2.1.2
+before_script:
+    - cp .database.travis.yml config/database.yml
+    - cp config/secrets.yml.sample config/secrets.yml
+    - psql -c 'create database wedding_test;' -U postgres
+env:
+  RAILS_ENV=test
 addons:
     code_climate:
         repo_token: 926525220689d4c21bcc0784a7b5f858a585100cbb9dd5a7d45236f9db391abe
-before_script:
-    - cp .database.travis.yml config/database.yml
-    - psql -c 'create database wedding_test;' -U postgres

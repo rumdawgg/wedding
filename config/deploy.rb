@@ -11,6 +11,7 @@ if "#{ENV['branchname']}".empty?
 else
   set :branch, "#{ENV['branchname']}"
 end
+set :currentbranch, "current"
 
 # Deploy Settings
 set :deploy_user, 'www'
@@ -34,7 +35,7 @@ set :conditionally_migrate, true
 set :custom_directories, %W{local_shared/passenger_restart}
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml config/application.yml config/newrelic.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml config/newrelic.yml}
 set :linked_dirs, %w{log tmp/backup tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Make sure rails and rake commands are called with bundle exec
@@ -142,14 +143,14 @@ namespace :deploy do
     end
   end
 
-  desc "Create an empty database on the db server"
-  task :createdb do
-    on roles(:db) do
-        dbuser = 'postgres'
-        database = "wedding_stage"
-        execute :createdb, "-U #{dbuser} #{database} -h localhost"
-      end
-  end
+  # desc "Create an empty database on the db server"
+  # task :createdb do
+  #   on roles(:db) do
+  #       dbuser = 'postgres'
+  #       database = "wedding_stage"
+  #       execute :createdb, "-U #{dbuser} #{database} -h localhost"
+  #     end
+  # end
 
   before :deploy, 'environment_check:all'
   before :updated, 'deploy:upload_images'
