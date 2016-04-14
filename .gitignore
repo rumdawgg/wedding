@@ -9,7 +9,7 @@
 
 # Ignore files that could contain secrets or passwords
 config/database.yml
-config/application.yml
+config/secrets.yml
 config/aws.yml
 
 # Ignore all logfiles and tempfiles.
