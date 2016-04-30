@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208155201) do
+ActiveRecord::Schema.define(version: 20160430214735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,39 @@ ActiveRecord::Schema.define(version: 20151208155201) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "guests", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.boolean  "is_attending"
+    t.string   "remarks"
+    t.integer  "invitee_id"
+    t.integer  "meal_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "guests", ["invitee_id"], name: "index_guests_on_invitee_id", using: :btree
+  add_index "guests", ["meal_id"], name: "index_guests_on_meal_id", using: :btree
+
+  create_table "invitees", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.boolean  "is_attending"
+    t.string   "remarks"
+    t.integer  "meal_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "invitees", ["meal_id"], name: "index_invitees_on_meal_id", using: :btree
+
+  create_table "meals", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "photos", force: :cascade do |t|
-    t.string   "title"
     t.string   "caption"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
@@ -57,5 +88,8 @@ ActiveRecord::Schema.define(version: 20151208155201) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "guests", "invitees"
+  add_foreign_key "guests", "meals"
+  add_foreign_key "invitees", "meals"
   add_foreign_key "photos", "albums"
 end
