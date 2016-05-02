@@ -1,4 +1,4 @@
 class Meal < ActiveRecord::Base
-  has_many :guests
-  has_many :invitees
+  belongs_to :guests
+  belongs_to :invitees
 end
