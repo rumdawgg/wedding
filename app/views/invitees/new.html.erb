@@ -1,0 +1,19 @@
+<div class="center jumbotron">
+
+  <%= form_for @invitee do |f| %>
+  <%= render 'shared/errors', object: @invitee %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  <%= f.collection_select(:meal_id, Meal.all, :id, :name, { :prompt => 'Select an Meal', :selected => @invitee.meal_id }, { class: 'form-control' }) %>
+  <%= f.nested_fields_for :guests do |ff| %>
+    <%= ff.text_field :first_name %>
+    <%= ff.text_field :last_name %>
+    <%= ff.collection_select(:meal_id, Meal.all, :id, :name, { :prompt => 'Select an Meal', :selected => @invitee.meal_id }, { class: 'form-control' }) %>
+    <% end %>
+    <%= f.add_nested_fields_link :guests, 'Add Guest' %>
+    <%= f.remove_nested_fields_link %>
+    <%= f.submit %>
+    <% end %>
+</div>
