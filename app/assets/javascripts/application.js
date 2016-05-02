@@ -16,3 +16,4 @@
 //= require bootstrap
 //= require_tree .
 //= require blueimp-gallery-all
+//= require nested_form_fields

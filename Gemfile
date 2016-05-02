@@ -25,6 +25,7 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'blueimp-gallery'
 gem 'bootstrap-will_paginate'
+gem 'nested_form_fields'
 
 # Database
 gem 'pg'
