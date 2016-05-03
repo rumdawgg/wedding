@@ -1,0 +1,14 @@
+<% provide(:title, "All Users") %>
+  <div class="jumbotron">
+    <% @invitees.each do |i| %>
+      First Name: <%=i.first_name %> <br>
+      Last Name: <%= i.last_name %> <br>
+      Meal: <%= Meal.find(i.meal_id).name %> <br><br>
+      <h3>Guests:</h3>
+      <% i.guests.each do |g| %>
+        First Name: <%= g.first_name %> <br>
+        Last Name: <%= g.last_name %> <br>
+        Meal: <%= Meal.find(g.meal_id).name %><br><br>
+      <% end %>
+    <% end %>
+</div>

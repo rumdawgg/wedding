@@ -11,12 +11,13 @@ Rails.application.routes.draw do
    get    'transportation'     => 'static#transportation'
    get    'activities'  => 'static#activities'
    get    'registries'  => 'static#registries'
-   #get    'rsvp'        => 'static#rsvp'
    get    'admin/albums' => 'albums#index'
    get    'admin/photos' => 'photos#index'
    get    'admin/users' => 'users#index'
+   get    'admin/meals' => 'meals#index'
    resources :albums
    resources :photos, path: '/admin/photos'
    resources :users, path: '/admin/users'
-   resources :guest, :meal, :invitees
+   resources :invitees, path: '/rsvp'
+   resources :meals
 end
