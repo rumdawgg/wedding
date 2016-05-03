@@ -48,18 +48,30 @@ textarea {
     margin-right: 50px;
 }
 
-  .navbar-nav {
-    width: 100%;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    font-family: 'Spinnaker', sans-serif;
-    text-align: center;
-    > li {
-        float: none;
-        display: inline-block;
-    }
+.navbar-nav {
+  width: 100%;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-family: 'Spinnaker', sans-serif;
+  text-align: center;
+  > li {
+      float: none;
+      display: inline-block;
   }
+}
 
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+hr.style-three {
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+}
 
 /* typography */
 
@@ -91,6 +103,13 @@ h3 {
     text-align: center;
     font-weight: bold;
     font-family: 'Crimson Text', sans-serif;
+}
+
+h4 {
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Lateef', sans-serif;
 }
 
 .centerdate {
