@@ -26,6 +26,7 @@ gem 'uglifier'
 gem 'blueimp-gallery'
 gem 'bootstrap-will_paginate'
 gem 'nested_form_fields'
+gem 'bootstrap_form'
 
 # Database
 gem 'pg'

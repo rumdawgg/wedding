@@ -48,6 +48,7 @@ GEM
       sass (>= 3.3.4)
     bootstrap-will_paginate (0.0.10)
       will_paginate
+    bootstrap_form (2.3.0)
     builder (3.2.2)
     byebug (8.2.2)
     capistrano (3.4.0)
@@ -245,6 +246,7 @@ DEPENDENCIES
   blueimp-gallery
   bootstrap-sass
   bootstrap-will_paginate
+  bootstrap_form
   byebug
   capistrano (~> 3.4.0)
   capistrano-bundler (~> 1.1)
