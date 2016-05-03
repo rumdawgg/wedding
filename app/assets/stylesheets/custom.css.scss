@@ -21,10 +21,13 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-    padding-top: 1px;
-    background-image: image-url("background.jpg");
-    background-repeat: y;
-    background-size: 100%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bca8ff+0,d4c6ff+25,f1edff+100 */
+  background: rgb(188,168,255); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(188,168,255,1) 0%, rgba(212,198,255,1) 25%, rgba(241,237,255,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(188,168,255,1) 0%,rgba(212,198,255,1) 25%,rgba(241,237,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(188,168,255,1) 0%,rgba(212,198,255,1) 25%,rgba(241,237,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bca8ff', endColorstr='#f1edff',GradientType=0 ); /* IE6-9 */
+
 }
 
 section {
@@ -45,18 +48,30 @@ textarea {
     margin-right: 50px;
 }
 
-  .navbar-nav {
-    width: 100%;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    font-family: 'Spinnaker', sans-serif;
-    text-align: center;
-    > li {
-        float: none;
-        display: inline-block;
-    }
+.navbar-nav {
+  width: 100%;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-family: 'Spinnaker', sans-serif;
+  text-align: center;
+  > li {
+      float: none;
+      display: inline-block;
   }
+}
 
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+hr.style-three {
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+}
 
 /* typography */
 
@@ -88,6 +103,13 @@ h3 {
     text-align: center;
     font-weight: bold;
     font-family: 'Crimson Text', sans-serif;
+}
+
+h4 {
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Lateef', sans-serif;
 }
 
 .centerdate {
@@ -139,15 +161,21 @@ footer {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
+// input, textarea, select, .uneditable-input {
+//   border: 1px solid #bbb;
+//   width: 100%;
+//   margin-bottom: 15px;
+//   @include box_sizing;
+// }
+//
+// input {
+//   height: auto !important;
+// }
 
-input {
-  height: auto !important;
+.divider{
+    width:50px;
+    height:auto;
+    display:inline-block;
 }
 
 #error_explanation {

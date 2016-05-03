@@ -15,7 +15,7 @@ set :currentbranch, "current"
 
 # Deploy Settings
 set :deploy_user, 'www'
-set :deploy_to, "/home/#{fetch(:deploy_user)}/app"
+set :deploy_to, "/home/#{fetch(:deploy_user)}/wedding"
 set :keep_releases, 5
 set :log_level, :debug
 set :format, :pretty

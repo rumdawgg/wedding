@@ -1,0 +1,8 @@
+<div class="center jumbotron">
+  <%= bootstrap_form_for @meal do |m| %>
+    <%= m.text_field :name, hide_label: true %>
+    <%= m.button 'Update Meal', class: 'btn btn-primary' %>
+  <% end %>
+<div class="divider"></div>
+<%= button_to "Delete Meal", @meal, method: :delete, data: { confirm: "Are you sure you want to delete this meal?" }, class: 'btn btn-danger' %>
+</div>

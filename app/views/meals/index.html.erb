@@ -1,0 +1,7 @@
+<% provide(:title, "All Meals") %>
+<div class="jumbotron">
+    <% @meals.each do |meal| %>
+    <%= meal.name %>
+    <%= link_to("Edit", edit_meal_path(meal)) %>
+    <% end %>
+</div>
