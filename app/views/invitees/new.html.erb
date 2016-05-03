@@ -1,17 +1,19 @@
-<h2>Event Registration</h2>
+<hr class="style-one">
+<h4>Event Registration</h4>
 <%= bootstrap_form_for(@invitee) do |f| %>
   <%= render 'shared/errors', object: @invitee %>
-  <%= f.text_field :first_name %>
-  <%= f.text_field :last_name %>
-  <%= f.collection_select(:meal_id, Meal.all, :id, :name, label: "Meal Choice") %>
+  <%= f.text_field :first_name, placeholder: 'First Name', hide_label: true %>
+  <%= f.text_field :last_name, placeholder: 'Last Name', hide_label: true %>
+  <%= f.collection_select(:meal_id, Meal.all, :id, :name, hide_label: true, prompt: 'Select meal...') %>
   <%= f.nested_fields_for :guests do |ff| %>
-    <hr>
-    <%= ff.text_field :first_name, label: 'Guest First Name' %>
-    <%= ff.text_field :last_name, label: 'Guest First Name' %>
-    <%= ff.collection_select(:meal_id, Meal.all, :id, :name, label: 'Guest Meal Choice') %>
+    <hr class="style-three">
+    <%= @initial_count %>
+    <%= ff.text_field :first_name, placeholder: 'First Name', hide_label: true %>
+    <%= ff.text_field :last_name, placeholder: 'Last Name', hide_label: true  %>
+    <%= ff.collection_select(:meal_id, Meal.all, :id, :name, hide_label: true, prompt: 'Select meal...') %>
     <%= ff.remove_nested_fields_link 'Remove This Guest', class: 'btn btn-danger', role: 'button' %>
   <% end %>
-  <hr>
+  <br>
   <div class="center">
     <%= f.button 'Submit RSVP', class: 'btn btn-primary' %>
     <div class="divider"></div>

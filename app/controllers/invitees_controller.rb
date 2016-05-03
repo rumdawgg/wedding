@@ -1,4 +1,5 @@
 class InviteesController < ApplicationController
+  before_filter :authenticate_user!, except: [:new, :create]
 
   def index
     @invitees = Invitee.all
@@ -18,9 +19,10 @@ class InviteesController < ApplicationController
     @invitee = Invitee.new(invitee_params)
     if @invitee.save
       flash[:notice] = "Registration Sucessful."
-      redirect_to @invitee and return
-    end
+      redirect_to root_path
+    else
       render 'new'
+    end
   end
 
   private
