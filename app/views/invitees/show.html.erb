@@ -2,9 +2,11 @@
 <div class="jumbotron">
     First Name: <%= @invitee.first_name %> <br>
     Last Name: <%= @invitee.last_name %> <br>
-    Meal: <%= get_meal(@invitee.meal_id) %> <br>
+    Meal: <%= Meal.find(@invitee.meal_id).name %> <br><br>
+    <h3>Guests:</h3>
     <% @guests.each do |guest| %>
     First Name: <%= guest.first_name %> <br>
     Last Name: <%= guest.last_name %> <br>
+    Meal: <%= Meal.find(guest.meal_id).name %><br><br>
     <% end %>
 </div>

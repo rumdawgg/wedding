@@ -1,19 +1,20 @@
-<div class="center jumbotron">
-
-  <%= form_for @invitee do |f| %>
+<h2>Event Registration</h2>
+<%= bootstrap_form_for(@invitee) do |f| %>
   <%= render 'shared/errors', object: @invitee %>
-  <%= f.label :first_name %>
   <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
   <%= f.text_field :last_name %>
-  <%= f.collection_select(:meal_id, Meal.all, :id, :name, { :prompt => 'Select an Meal', :selected => @invitee.meal_id }, { class: 'form-control' }) %>
+  <%= f.collection_select(:meal_id, Meal.all, :id, :name, label: "Meal Choice") %>
   <%= f.nested_fields_for :guests do |ff| %>
-    <%= ff.text_field :first_name %>
-    <%= ff.text_field :last_name %>
-    <%= ff.collection_select(:meal_id, Meal.all, :id, :name, { :prompt => 'Select an Meal', :selected => @invitee.meal_id }, { class: 'form-control' }) %>
-    <% end %>
-    <%= f.add_nested_fields_link :guests, 'Add Guest' %>
-    <%= f.remove_nested_fields_link %>
-    <%= f.submit %>
-    <% end %>
-</div>
+    <hr>
+    <%= ff.text_field :first_name, label: 'Guest First Name' %>
+    <%= ff.text_field :last_name, label: 'Guest First Name' %>
+    <%= ff.collection_select(:meal_id, Meal.all, :id, :name, label: 'Guest Meal Choice') %>
+    <%= ff.remove_nested_fields_link 'Remove This Guest', class: 'btn btn-danger', role: 'button' %>
+  <% end %>
+  <hr>
+  <div class="center">
+    <%= f.button 'Submit RSVP', class: 'btn btn-primary' %>
+    <div class="divider"></div>
+    <%= f.add_nested_fields_link :guests, 'Add Guest', class: 'btn btn-success' %>
+  </div>
+<% end %>
