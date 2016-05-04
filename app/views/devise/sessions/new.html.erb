@@ -1,14 +1,9 @@
-<h2>Log in</h2>
-<div class="center jumbotron">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<hr class="style-one">
+<h4>Log in</h4>
+<%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-
-    <%= f.label :password %><br />
+    <%= f.email_field :email, autofocus: true %>
     <%= f.password_field :password, autocomplete: "off" %>
-
     <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
 </div>

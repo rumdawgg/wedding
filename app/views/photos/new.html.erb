@@ -1,21 +1,10 @@
-<div class="center jumbotron">
-  <%= form_for @photo do |f| %>
+<hr class="style-one">
+<h4>Upload a New Photo</h4>
+  <%= bootstrap_form_for @photo do |f| %>
   <%= render 'shared/errors', object: @photo %>
-
-  <div class="form-group">
-    <%= f.label :caption %>
-    <%= f.text_field :caption, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :file %>
-    <%= f.file_field :file, class: 'form-control'%>
-  </div>
-
-  <div class="form-group">
-    <%= f.collection_select(:album_id, Album.all, :id, :name, { :prompt => 'Select an Album', :selected => @photo.album_id }, { class: 'form-control' }) %>
-  </div>
+    <%= f.text_field :caption %>
+    <%= f.file_field :file%>
+    <%= f.collection_select(:album_id, Album.all, :id, :name, :prompt => 'Select an Album', :selected => @photo.album_id ) %>
 
   <%= f.submit 'Upload', class: 'btn btn-primary' %>
   <% end %>
-</div>
