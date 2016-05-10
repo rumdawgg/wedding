@@ -1,9 +1,8 @@
 <hr class="style-one">
 <h4>Log in</h4>
 <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-    <%= f.email_field :email, autofocus: true %>
-    <%= f.password_field :password, autocomplete: "off" %>
-    <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-</div>
+<%= devise_error_messages! %>
+<%= f.email_field :email, autofocus: true, placeholder: "Email", hide_label: true %>
+<%= f.password_field :password, autocomplete: "off", placeholder: "Password", hide_label: true %>
+<%= f.submit "Log in", class: "btn btn-primary" %>
+<% end %>

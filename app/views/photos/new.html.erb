@@ -1,10 +1,9 @@
 <hr class="style-one">
 <h4>Upload a New Photo</h4>
-  <%= bootstrap_form_for @photo do |f| %>
-  <%= render 'shared/errors', object: @photo %>
-    <%= f.text_field :caption %>
-    <%= f.file_field :file%>
-    <%= f.collection_select(:album_id, Album.all, :id, :name, :prompt => 'Select an Album', :selected => @photo.album_id ) %>
-
-  <%= f.submit 'Upload', class: 'btn btn-primary' %>
-  <% end %>
+<%= bootstrap_form_for @photo do |f| %>
+<%= render 'shared/errors', object: @photo %>
+<%= f.text_field :caption %>
+<%= f.file_field :file%>
+<%= f.collection_select(:album_id, Album.all, :id, :name, :prompt => 'Select an Album', :selected => @photo.album_id ) %>
+<%= f.submit 'Upload', class: 'btn btn-primary' %>
+<% end %>
