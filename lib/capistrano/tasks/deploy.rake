@@ -5,7 +5,7 @@ namespace :deploy do
       Capistrano::HaproxyHelper.new(self).disable(server)
     end
 
-    run_locally { info '=========== BEGINNING DOWNTIME ==========' }
+    run_locally { info '=========== BEGINNING DOWNTIME =========='.bold.red }
     invoke 'rails:migrate'
     invoke 'deploy:rolling_restart'
 
@@ -13,7 +13,7 @@ namespace :deploy do
       Capistrano::HaproxyHelper.new(self).enable(server)
     end
 
-    run_locally { info '=========== SITE IS LIVE ==========' }
+    run_locally { info '=========== SITE IS LIVE =========='.bold.green }
   end
 
   task :promote_normal do
@@ -26,7 +26,7 @@ namespace :deploy do
     on roles(:app), in: :sequence do |server|
       passenger = Capistrano::PassengerHelper.new(self)
 
-      info "=========== Promoting #{server} =========="
+      info "=========== Promoting #{server} ==========".bold.blue
       haproxy.disable(server)
       passenger.graceful(server)
       passenger.wait_for_quick_response(server)

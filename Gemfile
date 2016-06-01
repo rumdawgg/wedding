@@ -21,6 +21,7 @@ gem 'newrelic_rpm'
 gem 'paperclip'
 gem 'devise'
 gem 'colorize'
+gem 'sshkit', '~> 1.7.0'
 
 # Assets
 gem 'coffee-rails'
