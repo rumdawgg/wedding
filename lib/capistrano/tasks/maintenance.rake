@@ -26,4 +26,4 @@ namespace :load do
   end
 end
 
-# after 'deploy:promoted', 'maintenance:prefetch_page'
+after 'deploy:promoted', 'maintenance:prefetch_page'
