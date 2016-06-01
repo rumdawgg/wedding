@@ -7,15 +7,21 @@ gem 'jbuilder'
 gem 'turbolinks'
 
 # Capistrano
-gem 'capistrano',           '~> 3.4.0'
-gem 'capistrano-rails',     '~> 1.1'
-gem 'capistrano-bundler',   '~> 1.1'
+gem 'capistrano', '~> 3.4.0'
+gem 'capistrano-bundler', '~> 1.1'
+gem 'capistrano-passenger'
+gem 'capistrano-rails',   '~> 1.1'
+gem 'capistrano-rbenv', '~> 2.0'
+gem 'capistrano-rails-console'
+gem 'capistrano_plm', '0.0.6', source: 'https://JyWxrxqtxhQof-gJazE5@repo.fury.io/patientslikeme/', require: false
 
 # Misc
 gem 'rollbar',              '~> 2.5.0'
 gem 'newrelic_rpm'
 gem 'paperclip'
 gem 'devise'
+gem 'colorize'
+gem 'sshkit', '~> 1.7.0'
 
 # Assets
 gem 'coffee-rails'
