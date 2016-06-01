@@ -27,7 +27,10 @@ body {
   background: -webkit-linear-gradient(top,  rgba(188,168,255,1) 0%,rgba(212,198,255,1) 25%,rgba(241,237,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  rgba(188,168,255,1) 0%,rgba(212,198,255,1) 25%,rgba(241,237,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bca8ff', endColorstr='#f1edff',GradientType=0 ); /* IE6-9 */
+}
 
+html {
+   height: 100%;
 }
 
 section {
