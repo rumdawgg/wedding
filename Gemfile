@@ -7,13 +7,13 @@ gem 'jbuilder'
 gem 'turbolinks'
 
 # Capistrano
-gem 'capistrano', '~> 3.4.0'
-gem 'capistrano-bundler', '~> 1.1'
-gem 'capistrano-passenger'
-gem 'capistrano-rails',   '~> 1.1'
-gem 'capistrano-rbenv', '~> 2.0'
-gem 'capistrano-rails-console'
+gem 'capistrano', '~> 3.0', require: false
+gem 'capistrano-bundler', '~> 1.1', require: false
+gem 'capistrano-passenger', require: false
+gem 'capistrano-rails',   '~> 1.1', require: false
+gem 'capistrano-rbenv', '~> 2.0', require: false
 gem 'capistrano_plm', '0.0.11', source: 'https://JyWxrxqtxhQof-gJazE5@repo.fury.io/patientslikeme/', require: false
+gem 'capistrano-rails-console'
 
 # Misc
 gem 'rollbar',              '~> 2.5.0'
