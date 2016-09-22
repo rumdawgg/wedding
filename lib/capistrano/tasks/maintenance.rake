@@ -21,7 +21,7 @@ end
 
 namespace :load do
   task :defaults do
-    set :maintenance_fetch_host_header, proc { 'www.patientslikeme.com' }
+    set :maintenance_fetch_host_header, proc { 'wedding.chicarello.com' }
     set :maintenance_fetch_url, proc { 'http://127.0.0.1/maintenance' }
   end
 end
