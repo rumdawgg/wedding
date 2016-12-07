@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gemfury = 'https://y6TLVUYJ6czrKHgA69ur@gem.fury.io/patientslikeme/'
 
 gem 'rails',                '4.2.5.2'
 
@@ -13,12 +14,13 @@ gem 'capistrano-passenger'
 gem 'capistrano-rails',   '~> 1.1'
 gem 'capistrano-rbenv', '~> 2.0'
 gem 'capistrano-rails-console'
-source 'https://JyWxrxqtxhQof-gJazE5@repo.fury.io/patientslikeme/' do
-  gem 'capistrano_plm', '0.0.6',require: false
+source gemfury do
+  gem 'capistrano_plm', '0.0.11', require: false
+  gem 'plm_resque', '0.0.2'
 end
 
 # Misc
-gem 'rollbar',              '~> 2.5.0'
+gem 'rollbar', '~> 2.5.0'
 gem 'newrelic_rpm'
 gem 'paperclip'
 gem 'devise'
