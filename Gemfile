@@ -13,7 +13,9 @@ gem 'capistrano-passenger'
 gem 'capistrano-rails',   '~> 1.1'
 gem 'capistrano-rbenv', '~> 2.0'
 gem 'capistrano-rails-console'
-gem 'capistrano_plm', '0.0.6', source: 'https://JyWxrxqtxhQof-gJazE5@repo.fury.io/patientslikeme/', require: false
+source 'https://JyWxrxqtxhQof-gJazE5@repo.fury.io/patientslikeme/' do
+  gem 'capistrano_plm', '0.0.6',require: false
+end
 
 # Misc
 gem 'rollbar',              '~> 2.5.0'
