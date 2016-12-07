@@ -1,0 +1,29 @@
+---
+engines:
+  bundleraudit:
+    enabled: false
+  csslint:
+    enabled: true
+  coffeelint:
+    enabled: true
+  eslint:
+    enabled: false
+  fixme:
+    enabled: true
+  golint:
+    enabled: false
+  gofmt:
+    enabled: false
+  rubocop:
+    enabled: true
+  scss-link:
+    enabled: false
+ratings:
+  paths:
+  - app/**
+  - lib/**
+  - "**.rb"
+exclude_paths:
+- log/*
+- tmp/*
+- vendor/**/*
