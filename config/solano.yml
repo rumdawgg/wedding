@@ -1,0 +1,82 @@
+####### SOLANO.YML #######
+#
+#   SOLANO CI CONFIGURATION FILE
+#   a useful (but incomplete) reference:
+#   http://docs.solanolabs.com/RunningBuild/config-file-reference/
+#
+
+system:
+  queue: 'v2runtime'
+
+
+####### TEST COMMANDS
+# we are using build profiles and plans; see http://docs.solanolabs.com/Beta/build-profiles/
+test_pattern:
+  # Here is where you specify which tests get run as part of
+  # every profile.  We don't want any tests to be run for
+  # all profiles, so we ensure the list is empty.
+  - do/not/run/test/pattern/by/default/follow_plan_instead*.rb
+plan: # this is what happens when a branch autobuilds (it's an ordered list of profiles)
+  - default
+profiles: # each profile contains a different set of tests to run
+  default: # run all tests that aren't local gem tests
+    system:
+      queue: 'default'
+    test_pattern:
+      - test/**_test.rb
+  gems: # just run the gem tests
+    system:
+      queue: 'v2runtime' # because the default runtime contains shared environment that causes
+                         # wacky test failures with local gems (for example, nokogiri);
+                         # v2runtime's test workers have completely isolated runtimes
+    tests:
+      # we run gem tests this way to ensure each gem runs in a separate load environment
+      # TODO: make a sciprt to run these.  http://docs.solanolabs.com/ConfiguringLanguage/ruby/#rails-engines-and-secondary-bundles
+      - "cd share/world/agent86              && bundle install && bundle exec rake"
+      - "cd share/world/brackish             && bundle install && bundle exec rake"
+      - "cd share/world/global_enforcer      && bundle install && bundle exec rake"
+      - "cd share/world/guerrilla_patcher    && bundle install && bundle exec rake"
+      - "cd share/world/hes_dead_jim         && bundle install && bundle exec rake"
+      - "cd share/world/human_query_parser   && bundle install && bundle exec rake"
+      - "cd share/world/record_counter       && bundle install && bundle exec rake"
+      - "cd share/world/westlake             && bundle install && bundle exec rake"
+      - "export ENGINE=share/world/schooner_interview_configuration ; cp config/database.yml $ENGINE/test/dummy/config/ && cd $ENGINE/ && bundle install && bundle exec rake"
+
+####### TEST WORKER SETUP
+skip_package:
+- ruby  # Skip automated `bundle install`
+hooks:  # all hooks are a SINGLE string, NOT a YAML list
+  pre_setup: "bundle install --path $HOME/bundle --no-deployment && bundle exec rake ci:before_build"   # Runs before setting up all test workers;
+                                                       #   only gets run once per testing session
+  # worker_setup: "..."                                # Runs once for each test worker
+                                                       #   to do, e.g., database setup
+  # post_setup:   "..."                                # Runs once after each test worker has been built
+                                                       #   but before tests are run
+  # post_worker:  "..."                                # Runs after a test worker is done
+  # post_build:   "..."                                # Runs once after entire testing session completes
+
+####### GENERAL SOLANO SETTINGS
+timeout_hook: 3600  # timeout for each setup/post-build hook
+cache:  # If you want to customize the files Solano CI checks to invalidate its cache, add a cache section to your solano.yml file. See http://docs.solanolabs.com/Setup/caching-dependencies/
+  key_paths:
+    - Gemfile
+    - Gemfile.lock
+
+####### ENVIRONMENT VARIABLES
+environment:
+  'CODECLIMATE_REPO_TOKEN': '926525220689d4c21bcc0784a7b5f858a585100cbb9dd5a7d45236f9db391abe'
+
+####### SUPPORTING SOFTWARE VERSIONS
+ruby_version: '2.1.2'
+bundler_version: 1.10.5
+postgresql:
+  version: '9.4'
+memcache: true
+nodejs:
+  version: '6.2.1'
+sqlite: false
+
+####### NOTIFICATIONS http://docs.solanolabs.com/Setup/notifications/
+notify:
+- channel: email
+  recipients: committers
