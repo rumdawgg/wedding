@@ -2,7 +2,7 @@ set :rails_env, 'production'
 
 set :stage, 'production'
 
-server 'vernaccia.chicarello.com', roles: %w(web app db)
+server 'wedding-web01.chicarello.com', roles: %w(web app db)
 
 set :merge_branch, 'current'
 
